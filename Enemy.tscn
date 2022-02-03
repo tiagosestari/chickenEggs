@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://StoneBricksBeige015_Cube.jpg" type="Texture" id=1]
+[ext_resource path="res://Enemy.gd" type="Script" id=2]
+[ext_resource path="res://WoodFineDark004_Sphere.jpg" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 51.5, 52 )
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 0 )
+shape = SubResource( 2 )
+
+[node name="pointer" type="Area2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="pointer"]
+enabled = true
+cast_to = Vector2( 800, 0 )
+
+[node name="Sprite" type="Sprite" parent="pointer"]
+position = Vector2( 90, 3 )
+scale = Vector2( 0.0539063, 0.0527344 )
+texture = ExtResource( 4 )
