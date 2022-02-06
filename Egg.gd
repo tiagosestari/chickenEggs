@@ -38,10 +38,10 @@ func drop():
 	picked = false
 	get_node("../Player").canPick = true
 	if get_node("../Player/sprite").flip_h == true:
-		self.position.x = get_node("../Player/Position2D").global_position.x + 80
-		self.position.y = get_node("../Player/Position2D").global_position.y + 40
+		self.position.x = get_node("../Player/Position2D").global_position.x + 10
+		self.position.y = get_node("../Player/Position2D").global_position.y + 5
 	else:
-		self.position.x = get_node("../Player/Position2D").global_position.x - 80
-		self.position.y = get_node("../Player/Position2D").global_position.y + 40
+		self.position.x = get_node("../Player/Position2D").global_position.x - 10
+		self.position.y = get_node("../Player/Position2D").global_position.y + 5
 	
 	

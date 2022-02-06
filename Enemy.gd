@@ -19,7 +19,7 @@ var sprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(self.get_position())
+	#print(self.get_position())
 	screen_size = get_viewport_rect().size
 	pointer = $pointer
 	ray = $pointer/RayCast2D
