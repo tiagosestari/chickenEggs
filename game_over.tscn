@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/game_over.gd" type="Script" id=1]
+[ext_resource path="res://go.png" type="Texture" id=2]
+[ext_resource path="res://Frying_an_Egg_Sound_Effect.mp3" type="AudioStream" id=3]
 
 [node name="game_over" type="Area2D"]
 script = ExtResource( 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 362.0
 margin_top = 178.0
 margin_right = 654.0
@@ -15,14 +18,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Go" type="Sprite" parent="."]
+position = Vector2( 523.5, 302 )
+scale = Vector2( 0.512207, 0.301758 )
+texture = ExtResource( 2 )
+
 [node name="Button" type="Button" parent="."]
-margin_left = 381.0
-margin_top = 277.0
-margin_right = 626.0
-margin_bottom = 388.0
+margin_left = 384.0
+margin_top = 522.0
+margin_right = 629.0
+margin_bottom = 575.0
 text = "Try Again"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

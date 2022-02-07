@@ -73,8 +73,16 @@ func lookfor(a):
 			#print(a, ray.get_collider())
 			found = true
 			sprite.modulate = Color(0,1,0)
-			var level = get_parent()
+			var pf2d = self.get_parent()
+			#print(pf2d.name)
+			var p2d = pf2d.get_parent()
+			#print(p2d.name)
+			var a2 = p2d.get_parent()
+			#print(a2.name)
+			var level = a2.get_parent()
+			#print(level.name)
 			var main = level.get_parent()
+			#print(main.name)
 			main.game_over() 
 		else:
 			sprite.modulate = Color(1,0,0)

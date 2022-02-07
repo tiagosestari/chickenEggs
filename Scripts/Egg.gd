@@ -53,12 +53,12 @@ func drop():
 	picked = false
 	get_node("../Player").canPick = true
 	if get_node("../Player/sprite").flip_h == true:
-		self.apply_impulse(Vector2(), Vector2(90, -10))
-		#self.position.x = get_node("../Player/Position2D").global_position.x + 10
-		#self.position.y = get_node("../Player/Position2D").global_position.y + 5
+		#self.apply_impulse(Vector2(), Vector2(90, -10))
+		self.position.x = get_node("../Player/Position2D").global_position.x + 10
+		self.position.y = get_node("../Player/Position2D").global_position.y + 5
 	else:
-		self.apply_impulse(Vector2(), Vector2(-90, -10))
-		#self.position.x = get_node("../Player/Position2D").global_position.x - 10
-		#self.position.y = get_node("../Player/Position2D").global_position.y + 5
+		#self.apply_impulse(Vector2(), Vector2(-90, -10))
+		self.position.x = get_node("../Player/Position2D").global_position.x - 10
+		self.position.y = get_node("../Player/Position2D").global_position.y + 5
 	
 	

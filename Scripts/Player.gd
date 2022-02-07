@@ -23,17 +23,21 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('move_up'):
 		velocity.y -= 1
+	
 	if velocity.length() > 0:
+		$sprite.play()
 		velocity = velocity.normalized() * speed
+	else:
+		$sprite.stop()
 
 func _physics_process(delta):
 	get_input()
 	#print(velocity)
 	velocity = move_and_slide(velocity)
-	for index in get_slide_count():
-		var collision := get_slide_collision(index)
-		var body := collision.collider
-		print("Collided with: ", body.name)
+	#for index in get_slide_count():
+	#	var collision := get_slide_collision(index)
+	#	var body := collision.collider
+	#	print("Collided with: ", body.name)
 	#position += velocity * delta
 		
 	#restrains player inside screen

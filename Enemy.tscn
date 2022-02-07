@@ -1,34 +1,35 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://StoneBricksBeige015_Cube.jpg" type="Texture" id=1]
+[ext_resource path="res://cook1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://pngtree-vector-right-arrow-icon-png-image_956430.jpg" type="Texture" id=3]
+[ext_resource path="res://cook2.png" type="Texture" id=3]
 [ext_resource path="res://shot.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 46, 75 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 51.5, 52 )
-
 [node name="Enemy" type="Area2D"]
 position = Vector2( 0, 200 )
-rotation = 3.14159
 script = ExtResource( 2 )
 pan_shot = ExtResource( 4 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 1 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 0 )
+position = Vector2( -11, 38 )
 shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -9, 38 )
+scale = Vector2( 0.452425, 0.38268 )
+frames = SubResource( 1 )
+flip_h = true
 
 [node name="pointer" type="Area2D" parent="."]
 
@@ -43,7 +44,6 @@ cast_to = Vector2( 200, 150 )
 [node name="Sprite" type="Sprite" parent="pointer"]
 position = Vector2( 94, -1 )
 scale = Vector2( 0.138064, 0.0985894 )
-texture = ExtResource( 3 )
 
 [node name="RayCast2D4" type="RayCast2D" parent="pointer"]
 enabled = true

@@ -44,3 +44,27 @@ func try_again():
 	
 	var go = self.get_node("game_over")
 	self.remove_child(go)
+
+func winGame():
+	var winScreen_r = load("res://WinScreen.tscn")
+	var winScreen = winScreen_r.instance()
+	self.add_child(winScreen)
+	var level = $Level
+	remove_child(level)
+	
+func how_to_play():
+	var htp_r = load("res://Howtoplay.tscn")
+	var htp = htp_r.instance()
+	self.add_child(htp)
+	
+	var gs = self.get_node("Start")
+	print(gs)
+	self.remove_child(gs)
+	
+func close_how_to_play():
+	var start_resource = load("res://Start.tscn")
+	var 	start = start_resource.instance()
+	self.add_child(start)
+	var htp = $Howtoplay 
+	self.remove_child(htp)
+	

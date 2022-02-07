@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Metre - Ruff House.mp3.mp3-7fdcd8bb69fe218ebaa6a0e7360df507.mp3str"
+
+[deps]
+
+source_file="res://Metre - Ruff House.mp3.mp3"
+dest_files=[ "res://.import/Metre - Ruff House.mp3.mp3-7fdcd8bb69fe218ebaa6a0e7360df507.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
