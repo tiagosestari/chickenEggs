@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Start.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Start.gd" type="Script" id=1]
 
 [node name="Start" type="Area2D"]
 scale = Vector2( 1.00669, 1.01391 )
@@ -27,7 +27,22 @@ margin_left = 441.048
 margin_top = 239.665
 margin_right = 647.048
 margin_bottom = 309.665
-text = "Start Game"
+text = "Normal Mode"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button3" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 441.049
+margin_top = 348.157
+margin_right = 647.049
+margin_bottom = 418.157
+text = "Never Stop Moving Mode"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -38,10 +53,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 442.042
-margin_top = 342.238
-margin_right = 648.042
-margin_bottom = 412.238
+margin_left = 443.036
+margin_top = 456.648
+margin_right = 649.036
+margin_bottom = 526.648
 text = "How to Play"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -49,3 +64,4 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

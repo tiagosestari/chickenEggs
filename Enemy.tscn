@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://StoneBricksBeige015_Cube.jpg" type="Texture" id=1]
-[ext_resource path="res://Enemy.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://pngtree-vector-right-arrow-icon-png-image_956430.jpg" type="Texture" id=3]
 [ext_resource path="res://shot.tscn" type="PackedScene" id=4]
 

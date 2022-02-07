@@ -33,39 +33,33 @@ func _process(delta):
 	var p = self.get_position()
 	#var r = self.get_rotation()
 	
-	var velocity = Vector2.ZERO
 	
-	if (p.x == screen_size.x):
-		#rotation_dir += -180
-		pointer.rotation_degrees += 180
-		mr = false
-	if (p.x == 0):
-		#rotation_dir += 180
-		pointer.rotation_degrees -= 180
-		mr = true
+	#I'll use a Path, therefore this part of the code is no longer necessary
+	#var velocity = Vector2.ZERO
+	#if (p.x == screen_size.x):
+	#	#rotation_dir += -180
+	#	pointer.rotation_degrees += 180
+	#	mr = false
+	#if (p.x == 0):
+	#	#rotation_dir += 180
+	#	pointer.rotation_degrees -= 180
+	#	mr = true
 	
-	if (mr == true):
-		velocity = Vector2(1,0)
-	else:
-		velocity = Vector2(-1,0)
-	
-	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-	
-	if (!found):
-		position += velocity * delta
-	else:
-		position = position
+	#if (mr == true):
+	#	velocity = Vector2(1,0)
+	#else:
+	#	velocity = Vector2(-1,0)
+	#if velocity.length() > 0:
+	#	velocity = velocity.normalized() * speed
+	#if (!found):
+	#	position += velocity * delta
+	#else:
+	#	position = position
 
 	#restrains player inside screen
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
-	#shoot(ray)
-	#shoot(ray2)
-	#shoot(ray3)
-	#shoot(ray4)
-	#shoot(ray5)
+
 	lookfor(ray)
 	lookfor(ray2)
 	lookfor(ray3)
@@ -81,7 +75,7 @@ func lookfor(a):
 			sprite.modulate = Color(0,1,0)
 			var level = get_parent()
 			var main = level.get_parent()
-			main.game_over()
+			main.game_over() 
 		else:
 			sprite.modulate = Color(1,0,0)
 	else:
